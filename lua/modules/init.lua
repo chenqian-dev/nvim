@@ -25,6 +25,7 @@ return require('packer').startup(function()
     -- tools
     require("modules/tools/vim-markdown").load(packer)
     require("modules/tools/rnvimr").load(packer)
+    require("modules/tools/gitsigns").load(packer)
 
 
 end)

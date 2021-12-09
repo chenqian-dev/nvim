@@ -54,7 +54,7 @@ map("n", "<A-l>", "<C-w>l", opt)
 --------------------------------------------------------------------
 -- 插件快捷键
 -- nvimTree
-map('n', '<leader>t', ':NvimTreeToggle<CR>', opt)
+map('n', '<leader>t', ':NvimTreeFindFileToggle<CR>', opt)
 
 -- bufferline 左右Tab切换
 map("n", "<C-h>", ":BufferLineCyclePrev<CR>", opt)
