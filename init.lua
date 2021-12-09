@@ -3,8 +3,8 @@ require("config")
 -- 快捷键
 require("keymaps")
 -- 插件
-require("plugins")
+require("modules")
 
 -- 使用主题
 vim.cmd [[set background=dark]]
-vim.cmd [[colorscheme nord]]
+vim.cmd [[colorscheme zephyr]]

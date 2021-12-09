@@ -1,6 +1,6 @@
-local plugin = {}
+local module = {}
 
-function plugin.load(packer)
+function module.load(packer)
     packer.use {
         'kyazdani42/nvim-tree.lua',
         requires = {'kyazdani42/nvim-web-devicons'},
@@ -17,4 +17,4 @@ function plugin.load(packer)
     }
 end
 
-return plugin
+return module
