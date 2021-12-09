@@ -6,5 +6,4 @@ require("keymaps")
 require("modules")
 
 -- 使用主题
-vim.cmd [[set background=dark]]
 vim.cmd [[colorscheme zephyr]]

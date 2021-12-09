@@ -6,6 +6,7 @@ return require('packer').startup(function()
     packer = require("packer")
 
     -- theme
+    require("modules/theme/nvim-web-devicons").load(packer)
     require("modules/theme/nord").load(packer)
     require("modules/theme/zephyr").load(packer)
 
@@ -23,6 +24,7 @@ return require('packer').startup(function()
 
     -- tools
     require("modules/tools/vim-markdown").load(packer)
+    require("modules/tools/rnvimr").load(packer)
 
 
 end)
