@@ -41,12 +41,14 @@ function module.load(packer)
         config = function()
             require'lspconfig'.clangd.setup{
                 filetypes = { "c", "cc", "cpp", "objc", "objcpp" },
+                cmd = 'clangd',
                 on_attach = on_attach,
                 flags = {
                     debounce_text_changes = 150,
                 }
             }
             require'lspconfig'.java_language_server.setup{
+                cmd = 'java_language_server',
                 on_attach = on_attach,
                 flags = {
                     debounce_text_changes = 150,
