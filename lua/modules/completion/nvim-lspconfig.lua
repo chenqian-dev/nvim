@@ -7,6 +7,7 @@ function module.load(packer)
             require'lspconfig'.clangd.setup{
                 filetypes = { "c", "cc", "cpp", "objc", "objcpp" }
             }
+            require'lspconfig'.java_language_server.setup{}
         end,
     }
 end
