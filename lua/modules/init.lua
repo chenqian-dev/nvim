@@ -21,6 +21,7 @@ return require('packer').startup(function()
 
     -- completion
     require("modules/completion/nvim-lspconfig").load(packer)
+    require("modules/completion/vista").load(packer)
 
     -- tools
     require("modules/tools/vim-markdown").load(packer)
