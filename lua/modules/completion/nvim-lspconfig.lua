@@ -43,19 +43,17 @@ function module.load(packer)
 --        }
 --      }
       require'lspconfig'.jdtls.setup{
-        cmd = {'jdtls'},
-        on_attach = on_attach,
-        flags = {
-          debounce_text_changes = 150,
-        },
-        filetypes = {"java"},
-        init_options = {
-          jvm_args = {},
-          workspace = "~/Workspace/qiniu/pili-webrtc/src/sdk/android/api"
-        },
-        root_dir = vim.fn.getcwd(),
-        single_file_support = true
-      }
+        -- cmd = {'jdtls'},
+        -- on_attach = on_attach,
+        -- flags = {
+        --   debounce_text_changes = 150,
+        -- },
+        -- filetypes = {"java"},
+        -- root_dir = require'lspconfig/util'.root_pattern("setting.gradle"),
+        -- single_file_support = true
+        cmd = {"jdt-language-server"},
+        root_dir = require'lspconfig/util'.root_pattern("setting.gradle"),
+      }.launch()
     end,
   }
 end
