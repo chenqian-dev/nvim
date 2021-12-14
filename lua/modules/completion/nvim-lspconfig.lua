@@ -35,15 +35,15 @@ function module.load(packer)
   packer.use {
     'neovim/nvim-lspconfig',
     config = function()
---      require'lspconfig'.clangd.setup{
---        filetypes = { "c", "cc", "cpp", "objc", "objcpp" },
---       on_attach = on_attach,
---        flags = {
---          debounce_text_changes = 150,
---        }
---      }
+      require'lspconfig'.clangd.setup{
+        filetypes = { "c", "cc", "cpp", "objc", "objcpp" },
+       on_attach = on_attach,
+        flags = {
+          debounce_text_changes = 150,
+        }
+      }
       require'lspconfig'.jdtls.setup{
-        -- cmd = {'jdtls'},
+         cmd = {'jdtls'},
         -- on_attach = on_attach,
         -- flags = {
         --   debounce_text_changes = 150,
@@ -51,9 +51,9 @@ function module.load(packer)
         -- filetypes = {"java"},
         -- root_dir = require'lspconfig/util'.root_pattern("setting.gradle"),
         -- single_file_support = true
-        cmd = {"jdt-language-server"},
-        root_dir = require'lspconfig/util'.root_pattern("setting.gradle"),
-      }.launch()
+        -- cmd = {"jdt-language-server"},
+        -- root_dir = require'lspconfig/util'.root_pattern("setting.gradle"),
+      }
     end,
   }
 end
