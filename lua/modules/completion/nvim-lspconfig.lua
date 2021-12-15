@@ -50,7 +50,7 @@ function module.load(packer)
         -- },
         -- filetypes = {"java"},
 --         root_dir = '/Users/chenqian/Workspace/qiniu/QNRTC-Android/QNDroidRTCDemo',
-         single_file_support = true,
+--         single_file_support = true,
          cmd = {"jdt-language-server"},
          root_dir = require'lspconfig/util'.root_pattern("setting.gradle"),
       }

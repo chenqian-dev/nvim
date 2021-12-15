@@ -1,7 +1,7 @@
 local module = {}
 
 function module.load(packer)
-  packer.use {'hrsh7th/cmp-nvim-lsp'}     
+  packer.use {'hrsh7th/cmp-nvim-lsp', requires = {'neovim/nvim-lspconfig'}}     
   packer.use {'hrsh7th/cmp-buffer'}
   packer.use {'hrsh7th/cmp-path'}
   packer.use {'hrsh7th/cmp-cmdline'}
@@ -18,6 +18,19 @@ function module.load(packer)
         -- vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
         -- require'snippy'.expand_snippet(args.body) -- For `snippy` users.
       end,
+    },
+    mapping = {
+      ['<C-b>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
+      ['<C-f>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
+      ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
+      ['<C-y>'] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
+      ['<C-e>'] = cmp.mapping({
+        i = cmp.mapping.abort(),
+        c = cmp.mapping.close(),
+      }),
+      -- Accept currently selected item. If none selected, `select` first item.
+      -- Set `select` to `false` to only confirm explicitly selected items.
+      ['<CR>'] = cmp.mapping.confirm({ select = true }),
     },
     sources = cmp.config.sources(
       {
@@ -56,11 +69,14 @@ function module.load(packer)
   )
 
   -- Setup lspconfig.
-  -- local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
-  -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
-  --require('lspconfig')['<YOUR_LSP_SERVER>'].setup {
-  --  capabilities = capabilities
-  --}
+  local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+  local nvim_lsp = require'lspconfig'
+  local servers = { 'jdtls', 'clangd'}
+  for _, lsp in ipairs(servers) do
+    nvim_lsp[lsp].setup {
+      capabilities = capabilities
+    }
+  end
 
 end
 
