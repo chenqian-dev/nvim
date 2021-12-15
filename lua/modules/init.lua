@@ -14,6 +14,7 @@ return require('packer').startup(function()
     require("modules/editor/nvim-tree").load(packer)
     require("modules/editor/nvim-treesitter").load(packer)
     require("modules/editor/telescope").load(packer)
+    require("modules/editor/telescope-fzf-native").load(packer)
 
     -- ui
     require("modules/ui/bufferline").load(packer)
