@@ -20,11 +20,9 @@ map("i", "<C-l>", "<right>", opt)
 ------------------------------- 移动 -----------------------------------
 
 
-
 ------------------------------- buffer -----------------------------------
 
 ------------------------------- buffer -----------------------------------
-
 
 
 ------------------------------- 窗口 -----------------------------------
@@ -38,8 +36,12 @@ map("n", "<M-l>", "<C-w>l", opt)
 ------------------------------- 窗口 -----------------------------------
 
 
-
-
+------------------------------- Telescope -----------------------------------
+map("n", "<leader>ff", "<cmd>Telescope find_files<cr>", opt)
+map("n", "<leader>fg", "<cmd>Telescope live_grep<cr>", opt)
+map("n", "<leader>fb", "<cmd>Telescope buffers<cr>", opt)
+map("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", opt)
+------------------------------- Telescope -----------------------------------
 
 
 
@@ -95,11 +97,6 @@ map("n", "<C-l>", ":BufferLineCycleNext<CR>", opt)
 
 -- nvim-treesitter 代码格式化
 map("n", "<leader>i", "gg=G", opt)
-
--- Telescope
-map("n", "<C-p>", ":Telescope find_files<CR>", opt)
-map("n", "<leader>f", ":Telescope find_files<CR>", opt)
-map("n", "<leader>g", ":Telescope live_grep<CR>", opt)
 
 pluginKeys = {}
 
