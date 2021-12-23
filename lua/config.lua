@@ -31,7 +31,7 @@ print(vim.inspect(vim.opt.autoindent))
 -----------------------------------------
 
 -- utf8
-vim.g.encoding = "UTF-8"
+vim.g.encoding = "utf-8"
 vim.o.fileencoding = 'utf-8'
 -- jk移动时光标下上方保留8行
 vim.o.scrolloff = 8
@@ -90,7 +90,7 @@ vim.o.swapfile = false
 -- smaller updatetime 
 vim.o.updatetime = 300
 -- 等待mappings
-vim.o.timeoutlen = 500
+vim.o.timeoutlen = 200
 -- split window 从下边和右边出现
 vim.o.splitbelow = true
 vim.o.splitright = true
@@ -121,3 +121,8 @@ vim.notify = function(msg, log_level, _opts)
         vim.api.nvim_echo({{msg}}, true, {})
     end
 end
+
+vim.o.suffixes=".bak,~,.o,.h,.info,.swp,.obj,.pyc,.pyo,.egg-info,.class"
+vim.o.wildignore="wildignore=*.o,*.obj,*~,*.exe,*.a,*.pdb,*.lib"
+vim.o.wildignore="*.so,*.dll,*.swp,*.egg,*.jar,*.class,*.pyc,*.pyo,*.bin,*.dex"
+

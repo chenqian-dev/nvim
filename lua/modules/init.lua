@@ -29,6 +29,7 @@ return require('packer').startup(function()
     require("modules/tools/vim-markdown").load(packer)
     require("modules/tools/rnvimr").load(packer)
     require("modules/tools/gitsigns").load(packer)
+    require("modules/tools/toggleterm").load(packer)
 
 
 end)

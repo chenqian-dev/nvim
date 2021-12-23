@@ -37,22 +37,23 @@ function module.load(packer)
     config = function()
       require'lspconfig'.clangd.setup{
         filetypes = { "c", "cc", "cpp", "objc", "objcpp" },
-       on_attach = on_attach,
+        on_attach = on_attach,
         flags = {
           debounce_text_changes = 150,
         }
       }
+      require'lspconfig'.cmake.setup{}
       require'lspconfig'.jdtls.setup{
-       --  cmd = {'jdtls'},
-         on_attach = on_attach,
+        --  cmd = {'jdtls'},
+        on_attach = on_attach,
         -- flags = {
         --   debounce_text_changes = 150,
         -- },
         -- filetypes = {"java"},
 --         root_dir = '/Users/chenqian/Workspace/qiniu/QNRTC-Android/QNDroidRTCDemo',
 --         single_file_support = true,
-         cmd = {"jdt-language-server"},
-         root_dir = require'lspconfig/util'.root_pattern("setting.gradle"),
+        cmd = {"jdt-language-server"},
+        root_dir = require'lspconfig/util'.root_pattern("setting.gradle"),
       }
     end,
   }
