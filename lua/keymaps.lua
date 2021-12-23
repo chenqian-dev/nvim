@@ -21,7 +21,9 @@ map("i", "<C-l>", "<right>", opt)
 
 
 ------------------------------- buffer -----------------------------------
-
+-- 关闭 buffer
+map("n", "<C-d>", "<cmd>bdelete<cr>", opt)
+map("i", "<C-d>", "<cmd>bdelete<cr>", opt)
 ------------------------------- buffer -----------------------------------
 
 
@@ -56,8 +58,6 @@ map("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", opt)
 
 
 -- ctrl u / ctrl + d  只移动9行，默认移动半屏
-map("n", "<C-u>", "9k", opt)
-map("n", "<C-d>", "9j", opt)
 
 -- visual模式下缩进代码
 map("v", "<", "<gv", opt)
