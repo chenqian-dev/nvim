@@ -1,7 +1,7 @@
 -- 基础配置
 require("config")
 -- 快捷键
-require("keymaps")
+require("keymappings")
 -- 插件
 require("modules")
 

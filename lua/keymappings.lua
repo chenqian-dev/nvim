@@ -8,6 +8,10 @@ local opt = {
     silent = true
 }
 
+------------------------------- 模式 -----------------------------------
+map("i", "jk", "<Esc>", opt)
+map("i", "kj", "<Esc>", opt)
+
 ------------------------------- 移动 -----------------------------------
 map("n", "<C-h>", "<left>", opt)
 map("n", "<C-j>", "<down>", opt)
@@ -32,7 +36,7 @@ map("n", "<M-l>", "<C-w>l", opt)
 
 
 ------------------------------- 文件管理器 -----------------------------------
-map('n', '<leader>t', ':NvimTreeFindFileToggle<CR>', opt)
+map('n', '<leader>t', ':NvimTreeFindFileToggle<CR>', {noremap = false, silent = true})
 
 ------------------------------- 文件查找 -----------------------------------
 map("n", "<leader>ff", "<cmd>Telescope find_files<cr>", opt)

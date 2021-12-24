@@ -29,15 +29,14 @@ print(vim.inspect(vim.opt.autoindent))
 --]]
 
 -----------------------------------------
-
--- utf8
 vim.g.encoding = "utf-8"
-vim.o.fileencoding = 'utf-8'
+-- utf8
+vim.opt.fileencoding = 'utf-8'
 -- jk移动时光标下上方保留8行
-vim.o.scrolloff = 8
-vim.o.sidescrolloff = 8
+vim.opt.scrolloff = 8
+vim.opt.sidescrolloff = 8
 -- 使用行号
-vim.wo.number = true
+vim.opt.number = true
 -- 使用相对行号
 -- vim.wo.relativenumber = true
 -- 高亮所在行
@@ -64,7 +63,7 @@ vim.o.smartindent = true
 vim.o.ignorecase = true
 vim.o.smartcase = true
 -- 搜索不要高亮
-vim.o.hlsearch = false
+vim.o.hlsearch = true
 -- 边输入边搜索
 vim.o.incsearch = true
 -- 使用增强状态栏后不再需要 vim 的模式提示
@@ -101,7 +100,7 @@ vim.o.termguicolors = true
 vim.opt.termguicolors = true
 -- 不可见字符的显示，这里只把空格显示为一个点
 vim.o.list = true
-vim.o.listchars = "space:·"
+-- vim.o.listchars = "space:·"
 -- 补全增强
 vim.o.wildmenu = true
 -- Dont' pass messages to |ins-completin menu|
@@ -109,18 +108,6 @@ vim.o.shortmess = vim.o.shortmess .. 'c'
 vim.o.pumheight = 10
 -- always show tabline
 vim.o.showtabline = 2
-
--- suppress error messages from lang servers
-vim.notify = function(msg, log_level, _opts)
-    if msg:match("exit code") then
-        return
-    end
-    if log_level == vim.log.levels.ERROR then
-        vim.api.nvim_err_writeln(msg)
-    else
-        vim.api.nvim_echo({{msg}}, true, {})
-    end
-end
 
 vim.o.suffixes=".bak,~,.o,.h,.info,.swp,.obj,.pyc,.pyo,.egg-info,.class"
 vim.o.wildignore="wildignore=*.o,*.obj,*~,*.exe,*.a,*.pdb,*.lib"
