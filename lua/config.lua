@@ -40,7 +40,7 @@ vim.opt.number = true
 -- 使用相对行号
 -- vim.wo.relativenumber = true
 -- 高亮所在行
-vim.wo.cursorline = true
+vim.o.cursorline = true
 -- 显示左侧图标指示列
 vim.wo.signcolumn = "yes"
 -- 右侧参考线，超过表示代码太长了，考虑换行
@@ -59,6 +59,7 @@ vim.bo.expandtab = true
 vim.o.autoindent = true
 vim.bo.autoindent = true
 vim.o.smartindent = true
+vim.o.cindent = true
 -- 搜索大小写不敏感，除非包含大写
 vim.o.ignorecase = true
 vim.o.smartcase = true
@@ -113,3 +114,6 @@ vim.o.suffixes=".bak,~,.o,.h,.info,.swp,.obj,.pyc,.pyo,.egg-info,.class"
 vim.o.wildignore="wildignore=*.o,*.obj,*~,*.exe,*.a,*.pdb,*.lib"
 vim.o.wildignore="*.so,*.dll,*.swp,*.egg,*.jar,*.class,*.pyc,*.pyo,*.bin,*.dex"
 
+vim.cmd[[
+hi Cursorline term=bold cterm=bold guibg=Grey40
+]]

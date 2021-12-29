@@ -9,34 +9,38 @@ local opt = {
 }
 
 ------------------------------- 模式 -----------------------------------
-map("i", "jk", "<Esc>", opt)
-map("i", "kj", "<Esc>", opt)
+map("i", "jk", "<esc>", opt)
+map("i", "kj", "<esc>", opt)
 
 ------------------------------- 移动 -----------------------------------
-map("n", "<C-h>", "<left>", opt)
-map("n", "<C-j>", "<down>", opt)
-map("n", "<C-k>", "<up>", opt)
-map("n", "<C-l>", "<right>", opt)
-map("i", "<C-h>", "<left>", opt)
-map("i", "<C-j>", "<down>", opt)
-map("i", "<C-k>", "<up>", opt)
-map("i", "<C-l>", "<right>", opt)
+map("n", "<c-h>", "<left>", opt)
+map("n", "<c-j>", "<down>", opt)
+map("n", "<c-k>", "<up>", opt)
+map("n", "<c-l>", "<right>", opt)
+map("i", "<c-h>", "<left>", opt)
+map("i", "<c-j>", "<down>", opt)
+map("i", "<c-k>", "<up>", opt)
+map("i", "<c-l>", "<right>", opt)
 
+------------------------------- 编辑 -----------------------------------
+
+map("i", "<C-Backspace>", "<C-w>", opt)
 
 ------------------------------- buffer -----------------------------------
 -- 关闭 buffer
-map("n", "<C-d>", "<cmd>bdelete<cr>", opt)
-map("i", "<C-d>", "<cmd>bdelete<cr>", opt)
+map("n", "<c-d>", "<cmd>bdelete<cr>", opt)
+map("i", "<c-d>", "<cmd>bdelete<cr>", opt)
 
 ------------------------------- 窗口 -----------------------------------
-map("n", "<M-h>", "<C-w>h", opt)
-map("n", "<M-j>", "<C-w>j", opt)
-map("n", "<M-k>", "<C-w>k", opt)
-map("n", "<M-l>", "<C-w>l", opt)
+map("n", "<m-h>", "<c-w>h", opt)
+map("n", "<m-j>", "<c-w>j", opt)
+map("n", "<m-k>", "<c-w>k", opt)
+map("n", "<m-l>", "<c-w>l", opt)
+map("n", "<m-d>", "<c-w>d", opt)
 
 
 ------------------------------- 文件管理器 -----------------------------------
-map('n', '<leader>t', ':NvimTreeFindFileToggle<CR>', {noremap = false, silent = true})
+map('n', '<leader>t', ':NvimTreeFindFileToggle<cr>', {noremap = false, silent = true})
 
 ------------------------------- 文件查找 -----------------------------------
 map("n", "<leader>ff", "<cmd>Telescope find_files<cr>", opt)
@@ -61,45 +65,46 @@ map("n", "<leader>1", "<cmd>Vista!!<cr>", opt)
 -- visual模式下缩进代码
 map("v", "<", "<gv", opt)
 map("v", ">", ">gv", opt)
-
+map("n", "<", "<gv", opt)
+map("n", ">", ">gv", opt)
 ------------------------------------------------------------------
 -- windows 分屏快捷键
-map("n", "sv", ":vsp<CR>", opt)
-map("n", "sh", ":sp<CR>", opt)
+map("n", "sv", ":vsp<cr>", opt)
+map("n", "sh", ":sp<cr>", opt)
 
 -- 关闭当前
-map("n", "sc", "<C-w>c", opt)
+map("n", "sc", "<c-w>c", opt)
 -- 关闭其他
-map("n", "so", "<C-w>o", opt) -- close others
+map("n", "so", "<c-w>o", opt) -- close others
 
 -- 比例控制
-map("n", "s>", ":vertical resize +20<CR>", opt)
-map("n", "s<", ":vertical resize -20<CR>", opt)
-map("n", "s=", "<C-w>=", opt)
-map("n", "sj", ":resize +10<CR>", opt)
-map("n", "sk", ":resize -10<CR>", opt)
+map("n", "s>", ":vertical resize +20<cr>", opt)
+map("n", "s<", ":vertical resize -20<cr>", opt)
+map("n", "s=", "<c-w>=", opt)
+map("n", "sj", ":resize +10<cr>", opt)
+map("n", "sk", ":resize -10<cr>", opt)
 
 -- alt + hjkl  窗口之间跳转
-map("n", "<A-h>", "<C-w>h", opt)
-map("n", "<A-j>", "<C-w>j", opt)
-map("n", "<A-k>", "<C-w>k", opt)
-map("n", "<A-l>", "<C-w>l", opt)
+map("n", "<a-h>", "<c-w>h", opt)
+map("n", "<a-j>", "<c-w>j", opt)
+map("n", "<a-k>", "<c-w>k", opt)
+map("n", "<a-l>", "<c-w>l", opt)
 
 --------------------------------------------------------------------
 -- 插件快捷键
 
--- bufferline 左右Tab切换
-map("n", "<C-h>", ":BufferLineCyclePrev<CR>", opt)
-map("n", "<C-l>", ":BufferLineCycleNext<CR>", opt)
+-- bufferline 左右tab切换
+map("n", "<c-h>", ":BufferLineCyclePrev<cr>", opt)
+map("n", "<c-l>", ":BufferLineCycleNext<cr>", opt)
 
 -- nvim-treesitter 代码格式化
-map("n", "<leader>i", "gg=G", opt)
+map("n", "<leader>i", "gg=g", opt)
 
-pluginKeys = {}
+pluginkeys = {}
 
 -- 代码注释插件
 -- see ./lua/plugin-config/comment.lua
-pluginKeys.comment = {
+pluginkeys.comment = {
     -- normal 模式
     toggler = {
         line = '<leader>c',
@@ -108,35 +113,9 @@ pluginKeys.comment = {
     -- visual 模式
     opleader = {
         -- ctrl + / 
-        line = '<C-_>',
+        line = '<c-_>',
         block = 'bc'
     }
 }
 
--- lsp 快捷键设置
--- ./lua/lsp/language_servers.lua
-pluginKeys.lsp_on_attach = function(client, buffer)
-    local function buf_set_keymap(...)
-        vim.api.nvim_buf_set_keymap(bufnr, ...)
-    end
-    local function buf_set_option(...)
-        vim.api.nvim_buf_set_option(bufnr, ...)
-    end
-    --- Mappings.
-    local opts = {
-        noremap = true,
-        silent = true
-    }
-    buf_set_keymap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
-    buf_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
-    buf_set_keymap('n', 'gh', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
-    -- buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
-    buf_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
-    buf_set_keymap('n', '<F2>', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
-    buf_set_keymap('n', 'ge', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
-    buf_set_keymap('n', 'gpe', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', opts)
-    buf_set_keymap('n', '<leader>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
-    buf_set_keymap('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
-end
-
-return pluginKeys
+return pluginkeys

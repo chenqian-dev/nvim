@@ -17,7 +17,7 @@ return require('packer').startup(function()
 
     -- theme
     require("modules/theme/nvim-web-devicons").load(packer)
-    require("modules/theme/nord").load(packer)
+--    require("modules/theme/nord").load(packer)
     require("modules/theme/zephyr").load(packer)
 
     -- editor
@@ -25,6 +25,7 @@ return require('packer').startup(function()
     require("modules/editor/nvim-treesitter").load(packer)
     require("modules/editor/telescope").load(packer)
     require("modules/editor/telescope-fzf-native").load(packer)
+    require("modules/editor/indent-blankline").load(packer)
 
     -- ui
     require("modules/ui/bufferline").load(packer)
