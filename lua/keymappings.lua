@@ -24,11 +24,12 @@ map("i", "<c-l>", "<right>", opt)
 
 ------------------------------- 编辑 -----------------------------------
 
-map("i", "<C-Backspace>", "<C-w>", opt)
-
 ------------------------------- buffer -----------------------------------
 -- 关闭 buffer
-map("n", "<c-d>", "<cmd>bdelete<cr>", opt)
+map("n", "<c-d>", ":BufferLinePickClose<cr>", opt)
+-- bufferline 左右tab切换
+map("n", "<c-h>", ":BufferLineCyclePrev<cr>", opt)
+map("n", "<c-l>", ":BufferLineCycleNext<cr>", opt)
 
 ------------------------------- 窗口 -----------------------------------
 map("n", "<m-h>", "<c-w>h", opt)
@@ -65,13 +66,6 @@ map("n", "<leader>ltd", "<cmd>Telescope lsp_type_definitions<cr>", opt)
 
 
 
-
-
-
-
-
--- ctrl u / ctrl + d  只移动9行，默认移动半屏
-
 -- visual模式下缩进代码
 map("v", "<", "<gv", opt)
 map("v", ">", ">gv", opt)
@@ -102,10 +96,6 @@ map("n", "<a-l>", "<c-w>l", opt)
 
 --------------------------------------------------------------------
 -- 插件快捷键
-
--- bufferline 左右tab切换
-map("n", "<c-h>", ":BufferLineCyclePrev<cr>", opt)
-map("n", "<c-l>", ":BufferLineCycleNext<cr>", opt)
 
 -- nvim-treesitter 代码格式化
 map("n", "<leader>i", "gg=g", opt)

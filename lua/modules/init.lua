@@ -17,7 +17,8 @@ return require('packer').startup(function()
 
     -- theme
     require("modules/theme/nvim-web-devicons").load(packer)
---    require("modules/theme/nord").load(packer)
+    require("modules/theme/nord").load(packer)
+    require("modules/theme/vscode").load(packer)
     require("modules/theme/zephyr").load(packer)
 
     -- editor
