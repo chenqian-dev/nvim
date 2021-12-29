@@ -31,16 +31,14 @@ return require('packer').startup(function()
     require("modules/ui/bufferline").load(packer)
     require("modules/ui/galaxyline").load(packer)
 
-    -- completion
-    require("modules/completion/nvim-lspconfig").load(packer)
-    require("modules/completion/vista").load(packer)
-    require("modules/completion/nvim-cmp").load(packer)
-
-    -- tools
+        -- tools
     require("modules/tools/vim-markdown").load(packer)
     require("modules/tools/rnvimr").load(packer)
     require("modules/tools/gitsigns").load(packer)
     require("modules/tools/toggleterm").load(packer)
 
-
+    -- completion
+    require("modules/completion/nvim-lspconfig").load(packer)
+    require("modules/completion/nvim-cmp").load(packer)
+    require("modules/completion/vista").load(packer)
 end)

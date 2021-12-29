@@ -29,7 +29,6 @@ map("i", "<C-Backspace>", "<C-w>", opt)
 ------------------------------- buffer -----------------------------------
 -- 关闭 buffer
 map("n", "<c-d>", "<cmd>bdelete<cr>", opt)
-map("i", "<c-d>", "<cmd>bdelete<cr>", opt)
 
 ------------------------------- 窗口 -----------------------------------
 map("n", "<m-h>", "<c-w>h", opt)
@@ -51,6 +50,17 @@ map("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", opt)
 ------------------------------- 代码浏览 -----------------------------------
 map("n", "<leader>1", "<cmd>Vista!!<cr>", opt)
 
+-- 代码跳转
+map("n", "<leader>lr", "<cmd>Telescope lsp_references<cr>", opt)
+map("n", "<leader>lds", "<cmd>Telescope lsp_docoment_symbols<cr>", opt)
+map("n", "<leader>lws", "<cmd>Telescope lsp_workspace_symbols<cr>", opt)
+map("n", "<leader>ldws", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", opt)
+map("n", "<leader>lca", "<cmd>Telescope lsp_code_actions<cr>", opt)
+map("n", "<leader>lrca", "<cmd>Telescope lsp_range_code_actions<cr>", opt)
+map("n", "<leader>d", "<cmd>Telescope diagnostics<cr>", opt)
+map("n", "<leader>li", "<cmd>Telescope lsp_implementions<cr>", opt)
+map("n", "<leader>ld", "<cmd>Telescope lsp_definitions<cr>", opt)
+map("n", "<leader>ltd", "<cmd>Telescope lsp_type_definitions<cr>", opt)
 
 
 
