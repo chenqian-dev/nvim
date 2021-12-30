@@ -22,6 +22,9 @@ map("i", "<c-j>", "<down>", opt)
 map("i", "<c-k>", "<up>", opt)
 map("i", "<c-l>", "<right>", opt)
 
+map("n", "j", "<Plug>(accelerated_jk_gj)", {silent = true})
+map("n", "k", "<Plug>(accelerated_jk_gk)", {silent = true})
+
 ------------------------------- 编辑 -----------------------------------
 
 ------------------------------- buffer -----------------------------------

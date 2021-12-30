@@ -27,6 +27,8 @@ return require('packer').startup(function()
     require("modules/editor/telescope").load(packer)
     require("modules/editor/telescope-fzf-native").load(packer)
     require("modules/editor/indent-blankline").load(packer)
+    require("modules/editor/neoformat").load(packer)
+    require("modules/editor/accelerated-jk").load(packer)
 
     -- ui
     require("modules/ui/bufferline").load(packer)
