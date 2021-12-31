@@ -111,8 +111,10 @@ vim.o.pumheight = 10
 vim.o.showtabline = 2
 
 vim.o.suffixes=".bak,~,.o,.h,.info,.swp,.obj,.pyc,.pyo,.egg-info,.class"
-vim.o.wildignore="wildignore=*.o,*.obj,*~,*.exe,*.a,*.pdb,*.lib"
-vim.o.wildignore="*.so,*.dll,*.swp,*.egg,*.jar,*.class,*.pyc,*.pyo,*.bin,*.dex"
+local ignore_files = "./**,"
+ignore_files = ignore_files .. "*.dwo,*.o,*.obj,*~,*.exe,*.a,*.pdb,*.lib,"
+ignore_files = ignore_files .. "*.so,*.dll,*.swp,*.egg,*.jar,*.class,*.pyc,*.pyo,*.bin,*.dex"
+vim.o.wildignore = ignore_files
 
 vim.cmd[[
 hi Cursorline term=bold cterm=bold guibg=Grey40

@@ -6,6 +6,17 @@ function module.load(packer)
     requires = {'nvim-lua/plenary.nvim'},
     config = function()
       require'telescope'.setup {
+        defaults = {
+          file_ignore_patternss = {
+            "%.*.o",
+            "%.*.dwo",
+          }
+        },
+        pickers = {
+          find_files = {
+            find_command = {"fd", "--ignore", "--type", "f", "--strip-cwd-prefix"}
+          },
+        },
         extensions = {
           fzf = {
             fuzzy = true,                    -- false will only do exact matching
