@@ -13,13 +13,6 @@ function module.load(packer)
       }
       nvim_lsp.cmake.setup{}
       nvim_lsp.jdtls.setup{
-        --  cmd = {'jdtls'},
-        -- flags = {
-        --   debounce_text_changes = 150,
-        -- },
-        -- filetypes = {"java"},
---         root_dir = '/Users/chenqian/Workspace/qiniu/QNRTC-Android/QNDroidRTCDemo',
---         single_file_support = true,
         cmd = {"jdt-language-server"},
         root_dir = require'lspconfig/util'.root_pattern("setting.gradle"),
       }
