@@ -29,6 +29,7 @@ return require('packer').startup(function()
     require("modules/editor/indent-blankline").load(packer)
     require("modules/editor/neoformat").load(packer)
     require("modules/editor/accelerated-jk").load(packer)
+    require("modules/editor/markdown").load(packer)
 
     -- ui
     require("modules/ui/bufferline").load(packer)
