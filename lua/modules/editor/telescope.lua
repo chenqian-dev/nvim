@@ -7,9 +7,13 @@ function module.load(packer)
     config = function()
       require'telescope'.setup {
         defaults = {
-          theme = "dropdown",
           file_ignore_patternss = {
             "*.o",
+          }
+        },
+        pickers {
+          find_files {
+            theme = "dropdown",
           }
         },
         extensions = {
