@@ -8,6 +8,7 @@ function module.load(packer)
             require'nvim-tree'.setup {
                 -- 关闭文件时自动关闭
                 auto_close = true,
+                theme = "onenord"
             }
         end,
     }

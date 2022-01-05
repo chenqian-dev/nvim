@@ -7,6 +7,7 @@ function module.load(packer)
         config = function()
             require'bufferline'.setup {
                 options = {
+                    theme = "onenord",
                     -- 使用 nvim 内置lsp
                     diagnostics = "nvim_lsp",
                     -- 左侧让出 nvim-tree 的位置

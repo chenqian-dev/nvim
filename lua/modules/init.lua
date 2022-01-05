@@ -9,42 +9,42 @@ if fn.empty(fn.glob(packer_install_path)) > 0 then
 end
 
 return require('packer').startup(function()
-    -- Packer can manage itself
-    use 'wbthomason/packer.nvim'
+  -- Packer can manage itself
+  use 'wbthomason/packer.nvim'
 
-    vim.api.nvim_command("packadd packer.nvim")
-    packer = require("packer")
+  vim.api.nvim_command("packadd packer.nvim")
+  packer = require("packer")
 
-    -- theme
-    require("modules/theme/nvim-web-devicons").load(packer)
-    require("modules/theme/nord").load(packer)
-    require("modules/theme/vscode").load(packer)
-    require("modules/theme/zephyr").load(packer)
+  -- theme
+  require("modules/theme/nvim-web-devicons").load(packer)
+  require("modules/theme/nord").load(packer)
+  require("modules/theme/onenord").load(packer)
+  require("modules/theme/vscode").load(packer)
+  require("modules/theme/zephyr").load(packer)
 
-    -- editor
-    require("modules/editor/nvim-tree").load(packer)
-    require("modules/editor/nvim-treesitter").load(packer)
-    require("modules/editor/telescope").load(packer)
-    require("modules/editor/telescope-fzf-native").load(packer)
-    require("modules/editor/indent-blankline").load(packer)
-    require("modules/editor/neoformat").load(packer)
-    require("modules/editor/accelerated-jk").load(packer)
-    require("modules/editor/markdown").load(packer)
+  -- editor
+  require("modules/editor/nvim-tree").load(packer)
+  require("modules/editor/nvim-treesitter").load(packer)
+  require("modules/editor/telescope").load(packer)
+  require("modules/editor/telescope-fzf-native").load(packer)
+  require("modules/editor/indent-blankline").load(packer)
+  require("modules/editor/neoformat").load(packer)
+  require("modules/editor/accelerated-jk").load(packer)
+  require("modules/editor/markdown").load(packer)
 
-    -- ui
-    require("modules/ui/bufferline").load(packer)
-    require("modules/ui/galaxyline").load(packer)
+  -- ui
+  require("modules/ui/bufferline").load(packer)
+  require("modules/ui/galaxyline").load(packer)
 
-        -- tools
-    require("modules/tools/vim-markdown").load(packer)
-    require("modules/tools/rnvimr").load(packer)
-    require("modules/tools/gitsigns").load(packer)
-    require("modules/tools/toggleterm").load(packer)
+  -- tools
+  require("modules/tools/rnvimr").load(packer)
+  require("modules/tools/gitsigns").load(packer)
+  require("modules/tools/toggleterm").load(packer)
 
-    -- completion
-    require("modules/completion/nvim-lspconfig").load(packer)
-    require("modules/completion/nvim-cmp").load(packer)
-    require("modules/completion/vista").load(packer)
-    require("modules/completion/nvim-autopairs").load(packer)
-    require("modules/completion/comment").load(packer)
+  -- completion
+  require("modules/completion/nvim-lspconfig").load(packer)
+  require("modules/completion/nvim-cmp").load(packer)
+  require("modules/completion/vista").load(packer)
+  require("modules/completion/nvim-autopairs").load(packer)
+  require("modules/completion/comment").load(packer)
 end)

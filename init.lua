@@ -5,4 +5,4 @@ require("keymappings")
 -- 插件
 require("modules")
 -- 使用主题
-vim.cmd[[colorscheme vscode]]
+vim.cmd[[colorscheme onenord]]
