@@ -34,7 +34,11 @@ return require('packer').startup(function()
 
   -- ui
   require("modules/ui/bufferline").load(packer)
-  require("modules/ui/galaxyline").load(packer)
+  use {
+    "nvim-lualine/lualine.nvim",
+    requires = { 'kyazdani42/nvim-web-devicons', opt = true },
+    config = function() require("plugin-config/lualine") end
+  }
 
   -- tools
   require("modules/tools/rnvimr").load(packer)

@@ -12,6 +12,8 @@ function module.load(packer)
         }
       }
       nvim_lsp.cmake.setup{}
+      nvim_lsp.pyright.setup{}
+      nvim_lsp.bashls.setup{}
       nvim_lsp.jdtls.setup{
         cmd = {"jdt-language-server"},
         root_dir = require'lspconfig/util'.root_pattern("setting.gradle"),
