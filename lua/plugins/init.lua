@@ -182,7 +182,7 @@ return packer.startup(function()
   packer.use {
     'liuchengxu/vista.vim',
     setup = function()
-      require("core.mappings").telescope()
+      require("core.mappings").vista()
       vim.cmd [[
       let g:vista_default_executive = 'nvim_lsp'
       let g:vista_sidebar_width = 50
@@ -197,56 +197,68 @@ return packer.startup(function()
     "rafamadriz/friendly-snippets",
     module = "cmp",
     event = "InsertEnter",
- }
+  }
 
- use {
+  use {
     "hrsh7th/nvim-cmp",
     after ="friendly-snippets",
     module = "cmp",
     config = function()
       require("plugins.configs.nvim-cmp").setup()
     end
- }
+  }
 
- use {
+  use {
     "L3MON4D3/LuaSnip",
     module = "cmp",
     wants = "friendly-snippets",
     after =  "nvim-cmp",
- }
+  }
 
- use {
+  use {
     "saadparwaiz1/cmp_luasnip",
     module = "cmp",
- }
+  }
 
- use {
+  use {
     "hrsh7th/cmp-nvim-lua",
     module = "cmp",
     after = "cmp_luasnip",
- }
+  }
 
- use {
+  use {
     "hrsh7th/cmp-nvim-lsp",
     module = "cmp",
     after =  "cmp-nvim-lua",
- }
+    setup = function()
+      -- Setup lspconfig.
+      local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+      local nvim_lsp = require'lspconfig'
+      local servers = { 'bashls', 'clangd', 'cmake', 'pyright', 'sumneko_lua'}
+      for _, lsp in ipairs(servers) do
+        nvim_lsp[lsp].setup {
+          capabilities = capabilities
+        }
+      end
 
- use {
+    end
+  }
+
+  use {
     "hrsh7th/cmp-buffer",
     module = "cmp",
     after = "cmp-nvim-lsp",
- }
+  }
 
- use {
+  use {
     "hrsh7th/cmp-cmdline",
     module = "cmp",
     after = "cmp-nvim-lsp",
- }
+  }
 
- use {
+  use {
     "hrsh7th/cmp-path",
     module = "cmp",
     after =  "cmp-buffer",
- }
+  }
 end)
