@@ -15,8 +15,10 @@ function module.load(packer)
       nvim_lsp.pyright.setup{}
       nvim_lsp.bashls.setup{}
       nvim_lsp.jdtls.setup{
-        cmd = {"jdt-language-server"},
-        root_dir = require'lspconfig/util'.root_pattern("setting.gradle"),
+        cmd = {"jdtls"},
+        root_dir = function(fname)
+          return require'lspconfig'.util.root_pattern('pom.xml', 'gradle.build')(fname) or vim.fn.getcwd()
+        end
       }
     end,
   }
