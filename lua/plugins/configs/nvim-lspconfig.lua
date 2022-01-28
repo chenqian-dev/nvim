@@ -6,7 +6,7 @@ M.setup = function()
     require("plugins.lsp.clangd").setup()
     require("plugins.lsp.cmake").setup()
     require("plugins.lsp.pyright").setup()
-    require("plugins.lsp.sumneko").setup()
+    require("plugins.lsp.sumneko_lua").setup()
 
     vim.diagnostic.config({
         virtual_text = true,

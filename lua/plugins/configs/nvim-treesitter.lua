@@ -13,6 +13,16 @@ local default = {
       enable = true,
       use_languagetree = true,
    },
+   -- 启用增量选择
+   incremental_selection = {
+       enable = true,
+       keymaps = {
+           init_selection = '<CR>',
+           node_incremental = '<CR>',
+           node_decremental = '<BS>',
+           scope_incremental = '<TAB>',
+       }
+   },
    matchup = {
       enable = true,              -- mandatory, false will disable the whole extension
    },
