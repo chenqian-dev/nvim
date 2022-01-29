@@ -172,6 +172,16 @@ return packer.startup(function()
   require("plugins.configs.nvim-lspconfig").setup()
   require("core.mappings").lspconfig()
 
+  -- nvim-cmp
+  use {'hrsh7th/cmp-nvim-lsp', requires = {'neovim/nvim-lspconfig'}}
+  use {'hrsh7th/cmp-buffer'}
+  use {'hrsh7th/cmp-path'}
+  use {'hrsh7th/cmp-cmdline'}
+  use {"hrsh7th/nvim-cmp"}
+  use {"hrsh7th/cmp-vsnip"}
+  use {"hrsh7th/vim-vsnip"}
+  require("plugins.configs.nvim-cmp").setup()
+
   -- vista
   use {'liuchengxu/vista.vim'}
   require("core.mappings").vista()
@@ -182,11 +192,5 @@ return packer.startup(function()
   let g:vista#renderer#enable_icon = 1
   ]]
 
-  -- nvim-cmp
-  use {'hrsh7th/cmp-nvim-lsp', requires = {'neovim/nvim-lspconfig'}}
-  use {'hrsh7th/cmp-buffer'}
-  use {'hrsh7th/cmp-path'}
-  use {'hrsh7th/cmp-cmdline'}
-  use {"hrsh7th/nvim-cmp"}
-  require("plugins.configs.nvim-cmp").setup()
+
 end)
