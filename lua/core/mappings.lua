@@ -13,7 +13,7 @@ map("i", "<c-l>", "<right>", {noremap = true, silent = true})
 
 -- buffer
 ------------------------------------------------------------------
-map("n", "<c-d>", ":lua require('core.utils').close_buffer() <CR>", {noremap = true, silent = true})
+map("n", "<m-d>", ":lua require('core.utils').close_buffer() <CR>", {noremap = true, silent = true})
 
 -- window
 ------------------------------------------------------------------
