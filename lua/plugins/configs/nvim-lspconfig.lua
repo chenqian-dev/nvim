@@ -1,7 +1,6 @@
 local M = {}
 
 M.setup = function()
-    
     require("plugins.lsp.bashls").setup()
     require("plugins.lsp.clangd").setup()
     require("plugins.lsp.cmake").setup()
