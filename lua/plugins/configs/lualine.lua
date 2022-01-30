@@ -40,6 +40,7 @@ M.setup = function()
     local config = {
       options = {
         -- Disable sections and component separators
+        disabled_filetypes = {"NvimTree"},
         component_separators = '',
         section_separators = '',
         theme = {
