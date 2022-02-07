@@ -106,6 +106,7 @@ M.lspconfig = function()
     map("n", "]d", "<cmd>lua vim.diagnostic.goto_next()<CR>", {noremap = true, silent = true})
     map("n", "<leader>q", "<cmd>lua vim.diagnostic.setloclist()<CR>", {noremap = true, silent = true})
     map("n", "<leader>fm", "<cmd>lua vim.lsp.buf.formatting()<CR>", {noremap = true, silent = true})
+    map("n", "<leader>sd", "<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>", {noremap = true, silent = true})
 end
 
 M.vista = function()
