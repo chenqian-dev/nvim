@@ -76,6 +76,16 @@ return packer.startup(function()
     end
   }
 
+  use {
+    "phaazon/hop.nvim",
+    config = function ()
+      require("plugins.configs.hop").setup()
+    end,
+    setup = function()
+      require("core.mappings").hop()
+    end,
+
+  }
   -- gitsigns
   use {
     "lewis6991/gitsigns.nvim",
