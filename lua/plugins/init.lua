@@ -206,5 +206,5 @@ return packer.startup(function()
   let g:vista#renderer#enable_icon = 1
   ]]
 
-
+  use {"skywind3000/vim-terminal-help"}
 end)
