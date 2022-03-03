@@ -206,5 +206,10 @@ return packer.startup(function()
   let g:vista#renderer#enable_icon = 1
   ]]
 
-  use {"skywind3000/vim-terminal-help"}
+  use {"mfussenegger/nvim-dap"}
+  use {"rcarriga/nvim-dap-ui"}
+  use {"Pocco81/DAPInstall.nvim"}
+  use {"akinsho/toggleterm.nvim"}
+  require("plugins.configs.toggleterm").setup()
+  require("core.mappings").toggleterm()
 end)

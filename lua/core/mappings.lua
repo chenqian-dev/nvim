@@ -34,13 +34,13 @@ map("n", "sk", ":resize -10<cr>", {noremap = true, silent = true})
 
 -- terminal
 ------------------------------------------------------------------
-map("t", "jk", "<C-\\><C-n>", {noremap = true, silent = true})
--- hide a term from within terminal mode
-map("t", "JK", "<C-\\><C-n> :lua require('core.utils').close_buffer() <CR>", {noremap = true, silent = true})
--- Open terminals
-map("n", "<leader>h", ":execute 15 .. 'new +terminal' | let b:term_type = 'hori' | startinsert <CR>", {noremap = true, silent = true})
-map("n", "<leader>v", ":execute 'vnew +terminal' | let b:term_type = 'vert' | startinsert <CR>", {noremap = true, silent = true})
-map("n", "<leader>w", ":execute 'terminal' | let b:term_type = 'wind' | startinsert <CR>", {noremap = true, silent = true})
+-- map("t", "jk", "<C-\\><C-n>", {noremap = true, silent = true})
+-- -- hide a term from within terminal mode
+-- map("t", "JK", "<C-\\><C-n> :lua require('core.utils').close_buffer() <CR>", {noremap = true, silent = true})
+-- -- Open terminals
+-- map("n", "<leader>h", ":execute 15 .. 'new +terminal' | let b:term_type = 'hori' | startinsert <CR>", {noremap = true, silent = true})
+-- map("n", "<leader>v", ":execute 'vnew +terminal' | let b:term_type = 'vert' | startinsert <CR>", {noremap = true, silent = true})
+-- map("n", "<leader>w", ":execute 'terminal' | let b:term_type = 'wind' | startinsert <CR>", {noremap = true, silent = true})
 
 -- plugins
 ------------------------------------------------------------------
@@ -121,4 +121,13 @@ M.hop = function()
   map('n', 'F', "<cmd>lua require'hop'.hint_lines()<cr>", {})
 end
 
+M.toggleterm = function()
+  map("n", "<leader>2", "<cmd>ToggleTerm<cr>", {noremap = true})
+  map('t', '<esc>', [[<C-\><C-n>]], {noremap = true})
+  map('t', 'jk', [[<C-\><C-n>]], {noremap = true})
+  map('t', '<C-h>', [[<C-\><C-n><C-W>h]], {noremap = true})
+  map('t', '<C-j>', [[<C-\><C-n><C-W>j]], {noremap = true})
+  map('t', '<C-k>', [[<C-\><C-n><C-W>k]], {noremap = true})
+  map('t', '<C-l>', [[<C-\><C-n><C-W>l]], {noremap = true})
+end
 return M

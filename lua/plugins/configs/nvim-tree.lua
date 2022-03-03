@@ -58,7 +58,7 @@ local default = {
    hijack_cursor = true,
    update_cwd = true,
    update_focused_file = {
-      enable = true,
+      enable = false,
       update_cwd = false,
    },
    view = {
