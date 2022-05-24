@@ -36,6 +36,7 @@ M.setup = function()
         background = "Normal",
       }
     }
+
   }
 end
 
